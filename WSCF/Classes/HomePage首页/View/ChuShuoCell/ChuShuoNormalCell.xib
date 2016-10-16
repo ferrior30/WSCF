@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChuShuoNormalCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkx-NI-YJo" customClass="UserImageButton">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="3xE-Sq-fwn"/>
+                        <constraint firstAttribute="height" constant="70" id="di4-eS-6r9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="云儿">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-pC-pJ5">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_bubble" translatesAutoresizingMaskIntoConstraints="NO" id="LFY-yb-fQy"/>
+                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-HU-9nu">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gHC-HU-9nu" secondAttribute="height" multiplier="1:1" id="bL6-ZB-G0N"/>
+                            </constraints>
+                        </imageView>
+                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="#虾骨柔情天妇罗#裹上面糊炸一炸就是天妇罗了吗😂？（寨版的吧）炸秋葵➕海鲜菇🍄➕山药➕蘑菇➕茄子🍆➕基围虾🍤" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlT-w7-oeY">
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19人  赞过" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qub-Dr-DTH">
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="gHC-HU-9nu" secondAttribute="bottom" constant="5" id="4y7-qt-1KW"/>
+                        <constraint firstItem="gHC-HU-9nu" firstAttribute="leading" secondItem="sx7-pC-pJ5" secondAttribute="leading" constant="20" id="BRF-B0-eLr"/>
+                        <constraint firstAttribute="trailing" secondItem="Qub-Dr-DTH" secondAttribute="trailing" constant="5" id="Eja-fD-RIY"/>
+                        <constraint firstItem="LFY-yb-fQy" firstAttribute="leading" secondItem="sx7-pC-pJ5" secondAttribute="leading" id="GeR-EP-vXx"/>
+                        <constraint firstAttribute="trailing" secondItem="LFY-yb-fQy" secondAttribute="trailing" id="KTN-9A-4YT"/>
+                        <constraint firstItem="gHC-HU-9nu" firstAttribute="top" secondItem="sx7-pC-pJ5" secondAttribute="top" constant="5" id="NUy-s4-OHB"/>
+                        <constraint firstItem="Qub-Dr-DTH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dlT-w7-oeY" secondAttribute="bottom" constant="10" id="X3J-GG-XG4"/>
+                        <constraint firstAttribute="bottom" secondItem="LFY-yb-fQy" secondAttribute="bottom" id="Zbc-Wj-4HX"/>
+                        <constraint firstItem="LFY-yb-fQy" firstAttribute="top" secondItem="sx7-pC-pJ5" secondAttribute="top" id="jl9-35-wcQ"/>
+                        <constraint firstItem="dlT-w7-oeY" firstAttribute="leading" secondItem="gHC-HU-9nu" secondAttribute="trailing" constant="10" id="knM-3Q-hUI"/>
+                        <constraint firstItem="Qub-Dr-DTH" firstAttribute="bottom" secondItem="gHC-HU-9nu" secondAttribute="bottom" id="nSi-pF-9P2"/>
+                        <constraint firstItem="dlT-w7-oeY" firstAttribute="top" secondItem="gHC-HU-9nu" secondAttribute="top" id="v1I-F4-6Ro"/>
+                        <constraint firstAttribute="trailing" secondItem="dlT-w7-oeY" secondAttribute="trailing" constant="5" id="x08-4S-fDg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bkx-NI-YJo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="1ot-gF-vwW"/>
+                <constraint firstItem="sx7-pC-pJ5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="CWD-zm-XaF"/>
+                <constraint firstItem="sx7-pC-pJ5" firstAttribute="leading" secondItem="bkx-NI-YJo" secondAttribute="trailing" constant="10" id="UmC-Uz-Koc"/>
+                <constraint firstItem="bkx-NI-YJo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="XwI-Xf-8cu"/>
+                <constraint firstAttribute="bottom" secondItem="sx7-pC-pJ5" secondAttribute="bottom" constant="10" id="jRS-qs-LEa"/>
+                <constraint firstAttribute="trailing" secondItem="sx7-pC-pJ5" secondAttribute="trailing" constant="10" id="qmg-Hy-rKl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descLabel" destination="dlT-w7-oeY" id="zac-lu-LuS"/>
+                <outlet property="imageV" destination="gHC-HU-9nu" id="knh-Ue-Ctz"/>
+                <outlet property="lickNumLabel" destination="Qub-Dr-DTH" id="Nhv-pL-GHg"/>
+                <outlet property="userImageButton" destination="bkx-NI-YJo" id="Xu5-ec-3Br"/>
+            </connections>
+            <point key="canvasLocation" x="55.5" y="-31"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_bubble" width="48" height="46"/>
+    </resources>
+</document>

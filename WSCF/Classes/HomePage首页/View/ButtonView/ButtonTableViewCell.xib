@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonTableViewCellId" rowHeight="116" id="KGk-i7-Jjw" customClass="ButtonTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="374" height="115.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVd-TV-SL7" userLabel="签到" customClass="CWCustomButton">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hbM-NL-anL"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oa-s5-nDE" userLabel="活动" customClass="CWCustomButton">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vY5-lq-xtK"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izI-TO-Ba2" userLabel="视频" customClass="CWCustomButton">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hxb-BT-t9f"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvW-KV-x9c" userLabel="菜谱" customClass="CWCustomButton">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zVz-t8-hHn"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KvW-KV-x9c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="51E-OM-lO4"/>
+                    <constraint firstItem="sVd-TV-SL7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="725-WK-Igi"/>
+                    <constraint firstItem="9Oa-s5-nDE" firstAttribute="leading" secondItem="KvW-KV-x9c" secondAttribute="trailing" id="9fV-ym-hWo"/>
+                    <constraint firstAttribute="bottom" secondItem="sVd-TV-SL7" secondAttribute="bottom" id="Asg-zE-YuO"/>
+                    <constraint firstItem="izI-TO-Ba2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GZ7-VX-G6H"/>
+                    <constraint firstAttribute="trailing" secondItem="izI-TO-Ba2" secondAttribute="trailing" id="Q6l-IK-QUH"/>
+                    <constraint firstItem="KvW-KV-x9c" firstAttribute="leading" secondItem="sVd-TV-SL7" secondAttribute="trailing" id="Ulf-6D-WCj"/>
+                    <constraint firstItem="sVd-TV-SL7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YwG-ht-uB9"/>
+                    <constraint firstAttribute="bottom" secondItem="izI-TO-Ba2" secondAttribute="bottom" id="aub-b4-mPZ"/>
+                    <constraint firstAttribute="bottom" secondItem="9Oa-s5-nDE" secondAttribute="bottom" id="d3M-rf-RrZ"/>
+                    <constraint firstItem="9Oa-s5-nDE" firstAttribute="width" secondItem="izI-TO-Ba2" secondAttribute="width" id="i2i-sr-Wib"/>
+                    <constraint firstItem="sVd-TV-SL7" firstAttribute="width" secondItem="KvW-KV-x9c" secondAttribute="width" id="j57-vw-ebQ"/>
+                    <constraint firstItem="KvW-KV-x9c" firstAttribute="width" secondItem="9Oa-s5-nDE" secondAttribute="width" id="jFU-gk-qDv"/>
+                    <constraint firstItem="9Oa-s5-nDE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="r06-59-4yy"/>
+                    <constraint firstAttribute="bottom" secondItem="KvW-KV-x9c" secondAttribute="bottom" id="rwU-hu-bmJ"/>
+                    <constraint firstItem="9Oa-s5-nDE" firstAttribute="height" secondItem="izI-TO-Ba2" secondAttribute="height" id="tvd-FW-Ul0"/>
+                    <constraint firstItem="izI-TO-Ba2" firstAttribute="leading" secondItem="9Oa-s5-nDE" secondAttribute="trailing" id="tyd-M5-rta"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="button0" destination="sVd-TV-SL7" id="x7l-rJ-gMh"/>
+                <outlet property="button1" destination="9Oa-s5-nDE" id="uRe-vG-wuC"/>
+                <outlet property="button2" destination="izI-TO-Ba2" id="Fuh-U8-KoQ"/>
+                <outlet property="button3" destination="KvW-KV-x9c" id="COF-oh-QAq"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="16"/>
+        </tableViewCell>
+    </objects>
+</document>

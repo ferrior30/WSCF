@@ -1,0 +1,364 @@
+
+<!doctype html>
+
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8" />
+            <meta name="viewport">
+<meta content="width=device-width,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no initial-scale=0.5" name="viewport" />
+<!--<meta name='viewport' content='target-densitydpi=(device-dpi),initial-scale=0.5  user-scalable=no'/>-->
+            <title>【沁州】黄小米500g真空*4 包邮</title>
+            <link rel="stylesheet" href="/resources/styles/myshop.css?v=20160109"/>
+            <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+            <link href="http://cdn.bootcss.com/Swiper/3.2.0/css/swiper.min.css" rel="stylesheet">
+                <script type="text/javascript" src="http://cdn.bootcss.com/Swiper/3.2.0/js/swiper.min.js"></script>
+                <script src="/resources/layer/layer.js"></script>
+                <script src="/resources/script/root.js?v=22"></script>
+                <script type="text/javascript">
+                    var deviceid = Ua_Obj.device;
+                    var goodid = 28574681;
+                    var goodType = 0;
+                    var cutdown = 0 ;
+                    var special = 0;
+                    //Timer
+                    if(goodType==1 && cutdown>0){
+                        var timer=setInterval(function(){
+                                              cutdown--;
+                                              var td = Math.floor(cutdown / ( 60 * 60 * 24));
+                                              var th = Math.floor((cutdown - td * 24 * 60 * 60 ) / ( 60 * 60));
+                                              var tm = Math.floor((cutdown - td * 24 * 60 * 60  - th * 60 * 60) / 60);
+                                              var ts = Math.floor((cutdown - td * 24 * 60 * 60  - th * 60 * 60  - tm * 60 ) );
+                                              if(cutdown<=0){
+                                              clearInterval(timer);
+                                              $(".grey_color").val("立即购买").removeClass("grey_color").attr("id","btnLK").prop("disabled",false);
+                                              }else{
+                                              td = td<10?"0"+td:td;
+                                              th = th<10?"0"+th:th;
+                                              tm = tm<10?"0"+tm:tm;
+                                              ts = ts<10?"0"+ts:ts;
+                                              $(".grey_color").val(td+"天"+th+"时"+tm+"分"+ts+"秒后开抢");
+                                              }
+                                              },1000)
+                                              
+                    }
+                //End Timer
+                $(document).ready(function (e) {
+                                  //下载禁止点击start
+                                  if(!Ua_Obj.version){//如果是来至分享，就是不是app里面打开的话
+                                  $("<link>").attr({ rel: "stylesheet",type: "text/css",href: "http://pic.xiaochushuo.com/header.css"}).appendTo("head");
+                                  $("body").css({"padding-top":"53px"});
+                                  $("body").prepend('<div class="top_announce">'+
+                                                    '<a class="top_announce_link" href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.ecook ">'+
+                                                    '<span class="top_announce_btn">下载</span>'+
+                                                    '<img src="http://pic.xiaochushuo.com/kitchenicon.png">'+
+                                                    '<span class="top_announce_t">下载网上厨房买食材学做菜</span>'+
+                                                    '<span class="top_announce_c">可以低于某东某宝某猫的价格买东西哟</span>'+
+                                                    '</a>'+
+                                                    '</div>');
+                                  $("body").children("div").not(".top_announce,.container").css({"pointer-events":"none"});
+                                  
+                                  $("body").children("div").not(".top_announce").on("click",function(){
+                                                                                    //点击购买引导下载app 2016.06.04
+                                                                                    if(this.className=="lj_fk"){
+                                                                                    window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.ecook";
+                                                                                    }else{
+                                                                                    $(this).prop("disabled",true);
+                                                                                    }
+                                                                                    return false;
+                                                                                    })
+                                  $(".kf_link").remove();
+                                  //移除遮层 2016.06.04
+                                  $(".lj_fk").removeAttr("style");
+                                  }
+                                  //下载禁止点击end
+                                  $("#txtSn").val(1);
+                                  //stock is left
+                                  var stock= $("input[name='stock_val']").val();
+                                  if(stock==0){
+                                  $("#btnQZ").css({"background":"#ccc"}).prop("disabled",true);
+                                  }
+                                  //Collection
+                                  $(".spsc").click(function(){
+                                                   $this = $(this);
+                                                   var Has_Col = $(this).hasClass("gray_filter");
+                                                   var status = Has_Col?0:1;
+                                                   
+                                                   $.getJSON(API_ROOT+"/usr/collectGood?goodId="+goodid+"&status="+status+"&deviceid="+deviceid+"&callback=?",function(data){
+                                                             if(data.code ==1){
+                                                             $this.addClass("gray_filter");
+                                                             }else{
+                                                             if(data.code==-2){
+                                                             window.location.href="ecook://login";
+                                                             }
+                                                             $this.removeClass("gray_filter");
+                                                             }
+                                                             layer.open({content: data.msg, time: 1});
+                                                             })
+                                                   })
+                                  
+                                  var ww = $(window).width();//可视窗口宽度
+                                  var dw = $(".swiper-pagination ").width();//小点宽度
+                                  $(".swiper-pagination").css({"left": ""});
+                                  var swiper = new Swiper('.swiper-container', {
+                                                          pagination: '.swiper-pagination',
+                                                          paginationClickable: true
+                                                          });
+                                  //点击立即购买弹出悬浮层
+                                  $(document).delegate("#btnLK","click",function(){
+                                                       //alert(deviceid);
+                                                       if(special == 1){
+                                                       $.getJSON(API_ROOT+"/usr/special?goodId="+goodid+"&deviceid="+deviceid,function(data){
+                                                                 if(data.code == 1){
+                                                                 var hei=$(document).height();
+                                                                 $("body").append("<div class='wltm' style='height:"+hei+"px'></div>");
+                                                                 $(".zz").css({"opacity":"0.5"});
+                                                                 $(".xd_fc").css({"-webkit-transform":"translateY(0)"});
+                                                                 $(".xd_fc").css({"transform":"translateY(0)"});
+                                                                 }else if(data.code == 0){
+                                                                 layer.open({content: '抱歉,您需要先去获取购买该商品的资格', time: 3});
+                                                                 return false;
+                                                                 }else{
+                                                                 layer.open({content: '请重新登录', time: 3});
+                                                                 }
+                                                                 })
+                                                       }else if(special == 2){
+                                                       $.getJSON("/usr/signin?goodId="+goodid+"&deviceid="+deviceid,function(data){
+                                                                 if(data.code == 1){
+                                                                 var hei=$(document).height();
+                                                                 $("body").append("<div class='wltm' style='height:"+hei+"px'></div>");
+                                                                 $(".zz").css({"opacity":"0.5"});
+                                                                 $(".xd_fc").css({"-webkit-transform":"translateY(0)"});
+                                                                 $(".xd_fc").css({"transform":"translateY(0)"});
+                                                                 }else if(data.code == 0){
+                                                                 layer.open({content: '连续签到满7天才能购买哦！', time: 3});
+                                                                 return false;
+                                                                 }else{
+                                                                 layer.open({content: '请重新登录', time: 3});
+                                                                 }
+                                                                 })
+                                                       }else{
+                                                       var hei=$(document).height();
+                                                       $("body").append("<div class='wltm' style='height:"+hei+"px'></div>");
+                                                       $(".zz").css({"opacity":"0.5"});
+                                                       $(".xd_fc").css({"-webkit-transform":"translateY(0)"});
+                                                       $(".xd_fc").css({"transform":"translateY(0)"});
+                                                       }
+                                                       
+                                                       });
+                                  $(".clo").bind('click',function(){
+                                                 $(".wltm").remove();
+                                                 $(".xd_fc").css({"-webkit-transform":"translateY(300px)"});
+                                                 $(".xd_fc").css({"transform":"translateY(300px)"});
+                                                 $(".zz").css({"opacity":"1"});
+                                                 });
+                                  
+                                  //点击确认支付
+                                  $("#btnQZ").bind('click',function(){
+                                                   if(stock==0){
+                                                   layer.open({content: '您来晚了,该商品已经售罄～', time: 1});
+                                                   return false;
+                                                   }
+                                                   //alert(API_ROOT)
+                                                   var index = layer.open({type: 2});//创建加载调试
+                                                   $.getJSON(API_ROOT+"/order/exitStock?deviceid="+deviceid+"&goodId="+goodid+"&quatity="+$("#txtSn").val()+"&callback=?",function(data){
+                                                             layer.close(index);
+                                                             
+                                                             if(data.code==0){
+                                                             layer.open({content: data.msg, time: 3});
+                                                             return false;
+                                                             }else if(data.code==-1){
+                                                             window.location.href="ecook://login";
+                                                             return false;
+                                                             }
+                                                             if(num_v*kcoin>data.ufpo.coin){//如果这里厨币不足
+                                                             layer.open({
+                                                                        style: 'width:80%;border-radius:5px',
+                                                                        content: '厨币不足咯</br> <p style="color:#aaa;">当前厨币:${ufPo.coin}</p>',
+                                                                        btn: ['去赚厨币', '返回'],
+                                                                        //shadeClose: false,
+                                                                        yes: function(){
+                                                                        window.location.href="http://event.ecook.cn/doc/howtogetchubi.html";
+                                                                        }, no: function(){
+                                                                        layer.open({content: '你选择了放弃', time: 1});
+                                                                        }
+                                                                        });
+                                                             }else{
+                                                             //跳转到下一页面
+                                                             window.location.href="/order/zf?goodId="+goodid+"&deviceid="+deviceid+"&quatity="+$("#txtSn").val();
+                                                             }
+                                                             });
+                                                   
+                                                   });
+                                  //购买数量
+                                  var aNum=$(".jia");//加
+                                  var sNum=$(".jian");//减
+                                  var num_i=$("#txtSn");
+                                  var num_v=num_i.val();
+                                  var price = $("input[name='price_val']").val();
+                                  var kcoin = $("input[name='kcoin_val']").val();
+                                  var max_num=$("#max_num").text();
+                                  num_i.change(function(){
+                                               if(!isNaN(num_v)){//如果输入的不为数字
+                                               num_i.val(1);
+                                               }
+                                               });
+                                  aNum.bind('touchstart click',function(event){
+                                            event.preventDefault();
+                                            if(num_v<max_num && num_v<stock){
+                                            num_v++;
+                                            num_i.val(num_v);
+                                            var pricenum=num_v*price;
+                                            $(".vjz_p").children("p").eq(0).text(num_v*kcoin+"厨币");
+                                            $(".vjz_p").children("p").eq(1).children("span").eq(1).text(pricenum.toFixed(2)+"元");
+                                            }
+                                            });
+                                  sNum.bind('touchstart click',function(event){
+                                            event.preventDefault();
+                                            if(num_v>1){
+                                            num_v--;
+                                            num_i.val(num_v);
+                                            var pricenum2=num_v*price;
+                                            $(".vjz_p").children("p").eq(0).text(num_v*kcoin+"厨币");
+                                            $(".vjz_p").children("p").eq(1).children("span").eq(1).text(pricenum2.toFixed(2)+"元");
+                                            }
+                                            });
+                                  //banner图片小大
+                                  var wwidth=$(window).width();
+                                  $(".warp_islider").height(wwidth+"px");
+                                  
+                                  });
+                    </script>
+                <style>
+                    .container {
+                        margin: auto;
+                        overflow: hidden;
+                        font-size: 0;
+                    }
+                
+                .warp_islider {
+                    position: relative;
+                    font-size: 0;
+                    z-index: 0;;
+                }
+                
+                .swiper-wrapper img {
+                    max-width: 100%;
+                    display: -webkit-box;
+                    margin: auto;
+                }
+                
+                .swiper-pagination-bullet {
+                    width: 10px;
+                    height: 10px;
+                    opacity: 1;
+                    margin-left: 10px;
+                    background-color: #DADFE0;
+                }
+                
+                .swiper-pagination-bullet:first-child {
+                    margin-left: 0;
+                }
+                
+                .swiper-pagination-bullet-active {
+                    background: #F4F4F4;
+                }
+                
+                .swiper-pagination {
+                    bottom: 20px;
+                    width: 100%;
+                }
+                </style>
+    </head>
+    <body>
+        <!--透明遮罩-->
+        <div class="container">
+            <!--商品banner图-->
+            <!--幻灯片效果 start-->
+            <div class="warp_islider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="http://mallpic.ecook.cn/1474535404901.jpg"></div>
+                        <div class="swiper-slide"><img src="http://mallpic.ecook.cn/1464940643559.jpg"></div>
+                    </div>
+                </div>
+                <!--这里是小点点-->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!--幻灯片效果 end-->
+        </div>
+        
+        <div class="spxq_main">
+            <!--商品介绍-->
+            <div class="sp1">
+                <div class="sp1_title">
+                    <h3>【沁州】黄小米500g真空*4 包邮</h3>
+                    <p><span>100厨币+</span><span>￥56.8</span> <!--<span style="color:#999; padding-left:18px; font-size:14px;">(库存: 551 )</span>--></p>
+                    <p><span>天猫价:￥70.0</span><span class="spsc"  data-grid="0"></span></p>
+                </div>
+                <div class="sp1_info">
+                    昔日贡品，优良的种植技术，规范化基地种植，先进的生产工艺，严格的质量把控。不添加 无污染 原生态 营养丰富 富硒 米油多 
+                </div>
+            </div>
+            <!--商品详情-->
+            <div class="sp_xq">
+                <h3>商品详情</h3>
+                <div class="spxq_info">
+                    <div>
+                        <p><span style="color:#999;">品牌名称</span>: 沁州</p>  
+                        <p><span style="color:#999;">生产商名</span>: 山西沁州黄小米（集团)有限公司</p>  
+                        <p><span style="color:#999;">产品规格</span>: 2Kg</p>  
+                        <p><span style="color:#999;">产品材质</span>: 沁州黄小米</p>  
+                    </div>
+                    
+                </div>
+            </div>
+            <!--图文介绍-->
+            <div class="sp_twjs">
+            </div>
+            <!--图文介绍-->
+            <div class="sp_twjs">
+                <p><strong style="text-align: center;"><span style="font-size:24px">全国包邮（新疆 &nbsp;西藏 &nbsp;海南除外） &nbsp;默认汇通快递 &nbsp;如果汇通不能抵达的请与客服联系</span><img src="http://mallpic.ecook.cn/1464940703308.jpg" _src="http://mallpic.ecook.cn/1464940703308.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940711138.jpg" _src="http://mallpic.ecook.cn/1464940711138.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940715966.jpg" _src="http://mallpic.ecook.cn/1464940715966.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940719029.jpg" _src="http://mallpic.ecook.cn/1464940719029.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940722648.jpg" _src="http://mallpic.ecook.cn/1464940722648.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940726287.jpg" _src="http://mallpic.ecook.cn/1464940726287.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940729644.jpg" _src="http://mallpic.ecook.cn/1464940729644.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940732580.jpg" _src="http://mallpic.ecook.cn/1464940732580.jpg" style=""/><img src="http://mallpic.ecook.cn/1464940736700.jpg" _src="http://mallpic.ecook.cn/1464940736700.jpg" style=""/></strong></p>
+            </div>
+        </div>
+        <div class="lj_fk">
+            <input type="button" value="立即购买" id="btnLK"/>
+        </div>
+        <!--下单浮层-->
+        <div class="xd_fc">
+            <div class="zz"></div>
+            <div class="sp2">
+                <div class="clo"></div>
+                <div class="sp_img"><img src="http://mallpic.ecook.cn/1474535404901.jpg" alt=""/></div>
+                <div class="sp_pn">
+                    <p><span>100厨币</span>+<span>￥56.8</span></p>
+                    <!--<p>库存<span>551</span>份</p>-->
+                </div>
+            </div>
+            <div class="pay_num">
+                <div>
+                    购买数量（ 限购<span id="max_num">10</span>份 ）
+                </div>
+                <div class="fl">
+                    <div><input type="button" value="" class="jian"/></div>
+                    <div><input type="text" value="1" id="txtSn" readonly="readonly" /></div>
+                    <div><input type="button" value="" class="jia"/></div>
+                    <input type="hidden" name="price_val" value="56.8">
+                        <input type="hidden" name="kcoin_val" value="100">
+                            <input type="hidden" name="stock_val" value="551">
+                                <input type="hidden" name="id_good" id = "id_good" value="28574681">
+                                    </div>
+            </div>
+            <div class="qr_zf">
+                <div>合计应付：</div>
+                <div class="vjz_p">
+                    <p>100厨币</p>
+                    <p><span>+</span><span>56.8元</span></p>
+                </div>
+                <div>
+                    <input type="button" value="确认下单" id="btnQZ"/>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="kf_link"><div class="kf"></div></a>
+    </body>
+</html>
