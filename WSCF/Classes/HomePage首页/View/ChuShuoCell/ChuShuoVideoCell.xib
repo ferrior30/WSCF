@@ -45,7 +45,7 @@
                     </state>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-GU-Cm8">
-                    <state key="normal" image="Icon_Video_Play"/>
+                    <state key="normal" image="Icon_Online_Play_40x40_"/>
                 </button>
             </subviews>
             <constraints>
@@ -78,6 +78,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Icon_Video_Play" width="42" height="42"/>
+        <image name="Icon_Online_Play_40x40_" width="40" height="40"/>
     </resources>
 </document>
