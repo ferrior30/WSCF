@@ -15,7 +15,6 @@
 		C02816F31DBCE74E008DFC73 /* NSString+CWNSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = C02816F21DBCE74E008DFC73 /* NSString+CWNSDate.m */; };
 		C02816F51DBCEAB0008DFC73 /* NSString+CWNSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = C02816F41DBCEAB0008DFC73 /* NSString+CWNSDate.m */; };
 		C05A41601DBB9809008A5E54 /* HomeDataViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = C05A415F1DBB9809008A5E54 /* HomeDataViewModal.m */; };
-		C05A41661DBBAEF2008A5E54 /* TeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05A41651DBBAEF2008A5E54 /* TeachViewController.m */; };
 		C05A416C1DBBB1CC008A5E54 /* OnlineLiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05A416B1DBBB1CC008A5E54 /* OnlineLiveTableViewController.m */; };
 		C05A416F1DBBB1DE008A5E54 /* DownlineLiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05A416E1DBBB1DE008A5E54 /* DownlineLiveTableViewController.m */; };
 		C05A41721DBBC175008A5E54 /* OnLIneLiveCook.m in Sources */ = {isa = PBXBuildFile; fileRef = C05A41711DBBC175008A5E54 /* OnLIneLiveCook.m */; };
@@ -61,6 +60,7 @@
 		C09548201DB37A130018C482 /* iTools Screen Shot 2016-10-10 16.03.52.png in Resources */ = {isa = PBXBuildFile; fileRef = C09547F71DB37A130018C482 /* iTools Screen Shot 2016-10-10 16.03.52.png */; };
 		C09548231DB37A270018C482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09548221DB37A270018C482 /* Assets.xcassets */; };
 		C09548291DB380F80018C482 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C09548281DB380F80018C482 /* Info.plist */; };
+		C0B5210A1DBE079C0075967B /* TeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B521091DBE079C0075967B /* TeachViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +95,6 @@
 		C02816F41DBCEAB0008DFC73 /* NSString+CWNSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CWNSDate.m"; sourceTree = "<group>"; };
 		C05A415E1DBB9809008A5E54 /* HomeDataViewModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataViewModal.h; sourceTree = "<group>"; };
 		C05A415F1DBB9809008A5E54 /* HomeDataViewModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataViewModal.m; sourceTree = "<group>"; };
-		C05A41641DBBAEF2008A5E54 /* TeachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachViewController.h; sourceTree = "<group>"; };
-		C05A41651DBBAEF2008A5E54 /* TeachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeachViewController.m; sourceTree = "<group>"; };
 		C05A416A1DBBB1CC008A5E54 /* OnlineLiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineLiveTableViewController.h; sourceTree = "<group>"; };
 		C05A416B1DBBB1CC008A5E54 /* OnlineLiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineLiveTableViewController.m; sourceTree = "<group>"; };
 		C05A416D1DBBB1DE008A5E54 /* DownlineLiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownlineLiveTableViewController.h; sourceTree = "<group>"; };
@@ -182,6 +180,8 @@
 		C09547F71DB37A130018C482 /* iTools Screen Shot 2016-10-10 16.03.52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTools Screen Shot 2016-10-10 16.03.52.png"; sourceTree = "<group>"; };
 		C09548221DB37A270018C482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C09548281DB380F80018C482 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0B521081DBE079C0075967B /* TeachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachViewController.h; sourceTree = "<group>"; };
+		C0B521091DBE079C0075967B /* TeachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeachViewController.m; sourceTree = "<group>"; };
 		CE5511B217F5A301D68B40F1 /* Pods-WSCFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSCFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSCFTests/Pods-WSCFTests.release.xcconfig"; sourceTree = "<group>"; };
 		D8D8D16A5B33D07E4FFCA52A /* libPods-WSCF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSCF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA76CD52599F9FB92501FB49 /* libPods-WSCFTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSCFTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -578,8 +578,8 @@
 		C09547F31DB37A130018C482 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C05A41641DBBAEF2008A5E54 /* TeachViewController.h */,
-				C05A41651DBBAEF2008A5E54 /* TeachViewController.m */,
+				C0B521081DBE079C0075967B /* TeachViewController.h */,
+				C0B521091DBE079C0075967B /* TeachViewController.m */,
 				C05A416A1DBBB1CC008A5E54 /* OnlineLiveTableViewController.h */,
 				C05A416B1DBBB1CC008A5E54 /* OnlineLiveTableViewController.m */,
 				C05A416D1DBBB1DE008A5E54 /* DownlineLiveTableViewController.h */,
@@ -924,12 +924,12 @@
 				C05A41751DBBC782008A5E54 /* Teacher.m in Sources */,
 				C05A416F1DBBB1DE008A5E54 /* DownlineLiveTableViewController.m in Sources */,
 				C09548051DB37A130018C482 /* ChuShuoNormalCell.m in Sources */,
+				C0B5210A1DBE079C0075967B /* TeachViewController.m in Sources */,
 				C05A41601DBB9809008A5E54 /* HomeDataViewModal.m in Sources */,
 				C09548101DB37A130018C482 /* RecommendUserTableViewCell.m in Sources */,
 				C09548141DB37A130018C482 /* CWTabBarButton.m in Sources */,
 				C095480E1DB37A130018C482 /* RecommendUserCollectionView.m in Sources */,
 				C095480B1DB37A130018C482 /* CWHomeHeaderView.m in Sources */,
-				C05A41661DBBAEF2008A5E54 /* TeachViewController.m in Sources */,
 				C09548041DB37A130018C482 /* UserImageButton.m in Sources */,
 				C05A416C1DBBB1CC008A5E54 /* OnlineLiveTableViewController.m in Sources */,
 				C09548011DB37A130018C482 /* ButtonTableViewCell.m in Sources */,
