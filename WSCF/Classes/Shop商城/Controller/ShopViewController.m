@@ -11,9 +11,19 @@
 
 @interface ShopViewController ()<WKNavigationDelegate, WKUIDelegate>
 @property (weak, nonatomic) WKWebView *webView;
+@property (assign, nonatomic) BOOL isFirstEnter;
+@property (strong, nonatomic) NSURL *URL;
 @end
 
 @implementation ShopViewController
+
++ (instancetype)showViewControllerWithURL:(NSURL *)URL isFirstEnter:(BOOL)isFirstEnter {
+    ShopViewController *vc = [[ShopViewController alloc] init];
+    vc.isFirstEnter = isFirstEnter;
+    vc.URL = URL;
+    
+    return vc;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,55 +35,51 @@
     [self.view addSubview:wk];
     self.webView = wk;
     
-    [wk loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mall.ecook.cn/category/list?f=ecook_show_mine&machine=Oe465ee7d2c21f604916deace6307de8014615245"]]];
+    [wk loadRequest:[NSURLRequest requestWithURL:self.URL]];
+    
     wk.scrollView.bounces = NO;
     wk.navigationDelegate = self;
     wk.UIDelegate = self;
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
-
-}
-
-- (UIViewController *)webView:(WKWebView *)webView previewingViewControllerForElement:(WKPreviewElementInfo *)elementInfo defaultActions:(NSArray<id<WKPreviewActionItem>> *)previewActions {
-    return self;
-}
-
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
-
-}
-
-//- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-////    if ([webView.URL.absoluteString  isEqual: @"http://mall.ecook.cn/category/list?f=ecook_show_mine&machine=Oe465ee7d2c21f604916deace6307de8014615245"] ) {
-////        return;
-////    }
-//    UIViewController *v = [[UIViewController alloc] init];
-//    WKWebView *wk = [[WKWebView alloc] init];
-//    wk.frame = v.view.bounds;
-//    [wk loadRequest:[NSURLRequest requestWithURL:webView.URL]];
-//    [v.view addSubview:wk];
-//    
-//    [self.navigationController pushViewController:v animated:YES];
-//}
-
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    _isFirstEnter = YES;
     
-
-//    [webView loadRequest:[NSURLRequest requestWithURL:webView.URL]];
-    UIViewController *v = [[UIViewController alloc] init];
-    WKWebView *wk = [[WKWebView alloc] init];
-    wk.frame = v.view.bounds;
-    [wk loadRequest:[NSURLRequest requestWithURL:webView.URL]];
-    [v.view addSubview:wk];
-    
-    [self.navigationController pushViewController:v animated:YES];
+    //
+    [self setupRightNavigationBar];
 }
 
+#pragma mark - 安装导航栏右边的登陆NavigationBar
+- (void)setupRightNavigationBar {
+//    UINavigationItem
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"web_shop_mine"] style:UIBarButtonItemStylePlain target:self action:@selector(login)];
+    [self.navigationItem setRightBarButtonItem:item];
+}
+
+#pragma mark - 内部方法
+/** 登陆 */
+- (void)login {
+    NSLog(@"%s", __func__);
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    if (_isFirstEnter) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+        _isFirstEnter = NO;
+    }else {
+    
+        NSLog(@"navigationAction.request.URL.absoluteString = %@",navigationAction.request.URL.absoluteString);
+        if([navigationAction.request.URL.host isEqualToString:@"mall.ecook.cn"]){
+            decisionHandler(WKNavigationActionPolicyAllow);
+            
+            ShopViewController *pwVC = [ShopViewController showViewControllerWithURL:navigationAction.request.URL isFirstEnter:YES];
+            pwVC.hidesBottomBarWhenPushed = YES;
+           
+            [self.navigationController pushViewController:pwVC animated:YES];
+            
+        }else {
+            decisionHandler(WKNavigationActionPolicyCancel);
+        }
+    }
+    
+}
 
 @end

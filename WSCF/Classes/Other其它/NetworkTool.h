@@ -10,6 +10,8 @@
 #import "AFNetworking.h"
 
 @interface NetworkTool : AFHTTPSessionManager
+
+@property (strong, nonatomic, nullable) NSDictionary *baseParasDict;
 + (instancetype _Nonnull)sharManager;
 //+ (void)POST:(NSString * _Nullable )url parameters:(id _Nullable)parameters success:(void (^_Nullable)(id _Nullable responseObject))successBlock failure:(void(^ _Nullable)(NSError * _Nullable error))failureBlock;
 //

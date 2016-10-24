@@ -72,7 +72,10 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
     
     _chuShuo = chuShuo;
     
-    [self.imageV sd_setImageWithURL:[NSURL URLWithString:chuShuo.image]];
+//    [self.imageV sd_setImageWithURL:[NSURL URLWithString:chuShuo.image]];
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:chuShuo.image] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageV.image = image;
+    }];
     
     self.titlLabel.text = chuShuo.title;
     

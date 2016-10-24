@@ -28,4 +28,6 @@
 #define CWScreenW [UIScreen mainScreen].bounds.size.width
 #define CWScreenH [UIScreen mainScreen].bounds.size.height
 
+#import "CWConst.h"
+
 #endif /* PrefixHeader_pch */

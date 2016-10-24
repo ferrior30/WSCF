@@ -56,7 +56,9 @@ CGFloat kCellTopMargin = 10;
     
     self.userImageButton.chuShuo = chuShuo;
     
-    [self.imageV sd_setImageWithURL:[NSURL URLWithString:chuShuo.image]];
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:chuShuo.image] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageV.image = image;
+    }];
     
     self.lickNumLabel.text = [NSString stringWithFormat:@"%zd 人点赞", chuShuo.likeNum];
     

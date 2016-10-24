@@ -68,8 +68,6 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [SDImageCache sharedImageCache].maxMemoryCountLimit = 25;
-    
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     
@@ -109,14 +107,12 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
     // 2.请求数据
 //    NSLog(@"-------%@", [NSDate date]);
     __weak typeof(self) weakSelf = self;
-    
-    
+
     [self.homeDataViewModal requestDifferentHomeData:^{ // 请求数据成功
         // 2.1.设置头部视图无限轮播的数据
         weakSelf.headerCircleView.imageNames = weakSelf.homeDataViewModal.bannerImageNames;
     
         // 2.2.刷新数据
-//        NSLog(@" =+++===%@", [NSDate date]);
         
         [weakSelf.tableView reloadData];
         
@@ -151,12 +147,16 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
     [super viewWillAppear:animated];
     
     self.customNavBar.hidden = NO;
+    
+    [SDImageCache sharedImageCache].maxMemoryCountLimit = 25;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     self.customNavBar.hidden = YES;
+    
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 #pragma mark - 添加子控件
@@ -198,7 +198,7 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
 
         // 传递数据
         cell.buttons = self.homeDataViewModal.buttonArray;
-        NSLog(@"%p",cell);
+//        NSLog(@"%p",cell);
 
         return cell;
     }else if (indexPath.row == 1) { // recommand
@@ -211,29 +211,18 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
         
         // 传递数据
         self.recommendUserCollectionViewController.recommendUsers = self.homeDataViewModal.recommendUserArray;
-        
-//        NSLog(@"video = %p",&cell);
         return cell;
-
     }else {
         
         ChuShuo *chuShuo;
-//        if (self.homeDataViewModal.chuShuos != nil) {
-            chuShuo = self.homeDataViewModal.chuShuos[indexPath.row - 2];
-//        }
+        chuShuo = self.homeDataViewModal.chuShuos[indexPath.row - 2];
         
         if (chuShuo.type == ChuShuoTpyeNormal) {
-            
             ChuShuoNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:ChuShuoNormalCellId];
-    
-//            cell.chuShuo = chuShuo;
-            NSLog(@"noranl = %p",&cell);
-            
             return cell;
         }else {
             ChuShuoVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:ChuShuoVideoCellId];
-//            cell.chuShuo = chuShuo;
-            NSLog(@"  video = %p",&cell);
+
             return cell;
         }
     }
@@ -241,23 +230,11 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(ChuShuoNormalCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row == 0) {
-//        ((ButtonTableViewCell *)cell).buttons = self.homeDataViewModal.buttonArray;
-//    }else if (indexPath.row == 1) {
-//     ((RecommendUserCell *)cell).buttons = self.homeDataViewModal.buttonArray;
-//    }
     
     if (indexPath.row > 1) {
         cell.chuShuo = self.homeDataViewModal.chuShuos[indexPath.row - 2];
     }
 }
-
-//- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(ChuShuoNormalCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row > 1) {
-//        
-//        cell.chuShuo = nil;
-//    }
-//}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -297,5 +274,6 @@ UIKIT_EXTERN  CGFloat kCellTopMargin;
 //- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
 //    [self.headerCircleView stopTimer];
 //}
+
 
 @end

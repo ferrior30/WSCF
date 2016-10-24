@@ -12,6 +12,7 @@
 #import "CWHomeTableViewController.h"
 #import "CWHomeCustomNavBar.h"
 #import "ShopViewController.h"
+#import "TeachViewController.h"
 
 @interface CWTabBarController ()<CWTabBarDeletgate>
 /** items:UITabBarItems模型 */
@@ -65,15 +66,14 @@
  
     
     // 2.商城
-    ShopViewController *shopVc = [[ShopViewController alloc] init];
-    shopVc.view.backgroundColor = [UIColor redColor];
+    NSURL *URL = [NSURL URLWithString:@"http://mall.ecook.cn/category/list?f=ecook_show_mine&machine=Oe465ee7d2c21f604916deace6307de8014615245"];
+    ShopViewController *shopVc = [ShopViewController showViewControllerWithURL:URL isFirstEnter:YES];
     
     shopVc.title = @"商城";
     [self setupOneChildVcWithRootViewController:shopVc title:@"商城" imageName:@"tab_shop_24x20_" selectedImageName:@"tab_shop_24x20_"];
     
     // 3.教学
-    UITableViewController *teachingVc = [[UITableViewController alloc] init];
-    teachingVc.view.backgroundColor = [UIColor redColor];
+    TeachViewController *teachingVc = [[TeachViewController alloc] init];
     teachingVc.title = @"教学";
     [self setupOneChildVcWithRootViewController:teachingVc title:@"教学" imageName:@"tab_teach_22x19_" selectedImageName:@"tab_teach_this_22x19_"];
     

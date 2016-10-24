@@ -11,6 +11,9 @@ target 'WSCF' do
   pod 'MJRefresh', '~> 3.1.9'
   pod 'MBProgressHUD', '~> 0.9.2'
   pod 'SDWebImage', '~> 3.8.0'
+  pod 'Masonry'
+  pod 'Mantle'
+  pod 'YTKNetwork'
 
   target 'WSCFTests' do
     inherit! :search_paths

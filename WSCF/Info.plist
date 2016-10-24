@@ -39,5 +39,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSExceptionAllowInsecureHTTPLoads</key>
+	<true/>
 </dict>
 </plist>

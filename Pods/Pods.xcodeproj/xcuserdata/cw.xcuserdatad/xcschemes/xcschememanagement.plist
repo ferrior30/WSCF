@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WSCF.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,10 +54,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YTKNetwork.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>217EAC165F4548B0FD1D928BBACEEFD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>426BC4549A625B5E1E4200D5261A98BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B64E66D703E858CEEE743DDD6D6DCC3</key>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50799476672D42D90077E35A479D9A00</key>
+		<key>68F3495AFACDB469C104EF7FE8117DC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,6 +98,16 @@
 			<true/>
 		</dict>
 		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C65D8ABDD5621F7CBAAAFDA91F5E2614</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F75119B09762AC29FB8DF3CCCF9256CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

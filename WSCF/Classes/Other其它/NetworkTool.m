@@ -18,4 +18,13 @@
     return manager;
 }
 
+- (NSDictionary *)baseParasDict {
+    if (_baseParasDict == nil) {
+        _baseParasDict = @{@"device": @"iPhone8,1",
+                           @"machine": @"Oe465ee7d2c21f604916deace6307de8014615245",
+                           @"version": @"12.8.2.1",
+                           };
+    }
+    return _baseParasDict;
+}
 @end

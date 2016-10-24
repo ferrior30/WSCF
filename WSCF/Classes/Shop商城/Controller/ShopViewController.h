@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopViewController : UIViewController
-
++ (instancetype)showViewControllerWithURL:(NSURL *)URL isFirstEnter:(BOOL)isFirstEnter;
 @end

@@ -25,7 +25,7 @@
     self.window.rootViewController = tabVc;
     
     [self.window makeKeyAndVisible];
-    
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     return YES;
 }
 

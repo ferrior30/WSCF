@@ -13,13 +13,13 @@
 - (instancetype)circleImage {
     // 开启一个图形上下文
 //    UIGraphicsBeginImageContext(self.size);
-    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.5);
     
     // 获取上下文
     CGContextRef ctf = UIGraphicsGetCurrentContext();
     
     // 绘制路径
-    CGRect rect = CGRectMake(0, 0, self.size.width , self.size.height);
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     
     CGContextAddEllipseInRect(ctf, rect);
     
@@ -32,7 +32,6 @@
     [self drawInRect:rect];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
     
     // 关闭上下文
     UIGraphicsEndImageContext();

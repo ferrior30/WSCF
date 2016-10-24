@@ -44,17 +44,28 @@
 
 - (void)setRecommendUserList:(RecommendUserList *)recommendUserList {
     _recommendUserList = recommendUserList;
+//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:recommendUserList.imageid] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            UIImage *circleImage = [image circleImage];
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.imageView.image = circleImage;
+//            });
+//        });
+//        
+//    }];
+    
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:recommendUserList.imageid] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            UIImage *circleImage = [image circleImage];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.imageView.image = circleImage;
-            });
-        });
+                    UIImage *circleImage = [image circleImage];
         
-    }];
+                        self.imageView.image = circleImage;
+
+                
+        }];
+    
+    
 
     self.label.text = recommendUserList.title;
 }
